@@ -19,7 +19,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 `USE_MOCK=true` is the default in `.env.local`. The UI, cleanup, segregation, packaging, and renderer all run without paid keys. Mock transcription writes ~80 words over ~40 seconds (including `um` / `uh`, `I I`, `this is why this is why`, and 0.8s gaps). The mock renderer waits 8 seconds, then attaches public sample MP4s.
 
-Copy `.env.example` if you need a fresh env file.
+Copy `.env.example` if you need a fresh env file. Prisma uses `DATABASE_URL=file:./dev.db` (created next to `prisma/schema.prisma`).
 
 ## Plug in real providers later
 
