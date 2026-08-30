@@ -117,7 +117,7 @@ function buildMockWords(): Word[] {
   return words;
 }
 
-export function mockTranscribe(_sourceUrl: string): TranscriptResult {
+export function mockTranscribe(): TranscriptResult {
   const words = buildMockWords();
   const durationSec = words[words.length - 1]?.end ?? 40;
   return {

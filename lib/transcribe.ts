@@ -6,7 +6,7 @@ import type { TranscriptResult } from "@/lib/types";
 
 export async function transcribeSource(sourceUrl: string): Promise<TranscriptResult> {
   if (isMock() || !env.assemblyAiKey) {
-    return mockTranscribe(sourceUrl);
+    return mockTranscribe();
   }
   return transcribeWithAssemblyAi(sourceUrl);
 }
