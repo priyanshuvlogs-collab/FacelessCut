@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Job {
+  id                   String   @id @default(cuid())
+  status               String
+  sourceKey            String
+  sourceUrl            String?
+  originalDurationSec  Float?
+  cleanDurationSec     Float?
+  style                String   @default("faceless-documentary")
+  hookMode             String   @default("auto")
+  customHook           String?
+  outputs              String   @default("both")
+  splitMode            String   @default("chapters")
+  silenceMs            Int      @default(350)
+  removeFillers        Boolean  @default(true)
+  removeRepeats        Boolean  @default(true)
+  wordsJson            Json?
+  cleanupJson          Json?
+  sectionsJson         Json?
+  remappedWordsJson    Json?
+  hookText             String?
+  youtubeTitle         String?
+  youtubeDescription   String?
+  outputLandscapeUrl   String?
+  outputVerticalUrl    String?
+  shortsJson           Json?
+  error                String?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+}
